@@ -28,3 +28,16 @@ sql-statements:
 	-INSERT INTO conditions VALUES (NOW(), 'weather-pro-000002', 70.1, 50.1) RETURNING *;
 	-SELECT * FROM conditions LIMIT 10;
 
+login:
+	-pass
+#	  # login as superuser
+#    kubectl run -i --tty --rm psql --image=postgres \
+#      --env "PGPASSWORD=$PGPASSWORD_SUPERUSER" \
+#      --command -- psql -U postgres \
+#      -h timescaledb.timescaledb.svc.cluster.local postgres
+#
+#    # login as admin
+#    kubectl run -i -tty --rm psql --image=postgres \
+#      --env "PGPASSWORD=$PGPASSWORD_ADMIN" \
+#      --command -- psql -U admin \
+#      -h timescaledb.timescaledb.svc.cluster.local postgres
